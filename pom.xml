@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>removedcacheditem</groupId>
+    <artifactId>removedcacheditem</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
+
+    <properties>
+        <appState>IsRemovedCachedItem</appState>
+        <appName>removedcacheditem</appName>
+        <appDomain>removedcacheditem</appDomain>
+        <maven.test.skip>false</maven.test.skip>
+        <maven.compiler.source>1.9</maven.compiler.source>
+        <maven.compiler.target>1.9</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+    </properties>
+
+    <scm>
+        <developerConnection>scm:git:git@github.com:Adimpression/removedcacheditem.git</developerConnection>
+        <connection>scm:git:git@github.com:Adimpression/removedcacheditem.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>cloud-artifacts</id>
+            <url>artifactregistry://europe-maven.pkg.dev/tough-transport-214713/state</url>
+        </snapshotRepository>
+        <repository>
+            <id>cloud-artifacts</id>
+            <url>artifactregistry://europe-maven.pkg.dev/tough-transport-214713/state</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>cloud-artifacts</id>
+            <url>artifactregistry://europe-maven.pkg.dev/tough-transport-214713/state</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>specification</groupId>
+            <artifactId>specification</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>state</groupId>
+            <artifactId>generator</artifactId>
+            <version>2.0.145</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.21</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast</artifactId>
+            <version>3.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-client</artifactId>
+            <version>3.7.2</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <appState>${appState}</appState>
+                        <appName>${appName}</appName>
+                        <appDomain>${appDomain}</appDomain>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+        <extensions>
+            <extension>
+                <groupId>com.google.cloud.artifactregistry</groupId>
+                <artifactId>artifactregistry-maven-wagon</artifactId>
+                <version>2.0.0</version>
+            </extension>
+        </extensions>
+    </build>
+
+</project>
