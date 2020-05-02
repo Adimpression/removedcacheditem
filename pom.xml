@@ -4,7 +4,7 @@
 
     <groupId>removedcacheditem</groupId>
     <artifactId>removedcacheditem</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
 
     <properties>
         <appState>IsRemovedCachedItem</appState>
@@ -20,7 +20,7 @@
     <scm>
         <developerConnection>scm:git:git@github.com:Adimpression/removedcacheditem.git</developerConnection>
         <connection>scm:git:git@github.com:Adimpression/removedcacheditem.git</connection>
-        <tag>HEAD</tag>
+        <tag>removedcacheditem-1.0.2</tag>
     </scm>
 
     <distributionManagement>
