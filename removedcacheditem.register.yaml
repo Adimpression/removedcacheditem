@@ -1,0 +1,31 @@
+artifact:
+  appState: 'IsRemovedCachedItem'
+  appName: 'removedcacheditem'
+  appDomain: 'removedcacheditem'
+  appImage:
+    development: 'localhost:32000/removedcacheditem'
+    staging:
+    production: 'removedcacheditem'
+  appRelease: '1.0.0'
+  appSpacialScope:
+    internet: false
+    cluster: true
+  ports:
+    - 8080
+  conf:
+    development:
+    staging:
+    production:
+  enc:
+    development:
+    staging:
+    production:
+  dependencies:
+    - artifact:
+        appState: 'IsStoredCachedItem'
+        appName: 'storedcacheditem'
+        appDomain: 'storedcacheditem'
+    - artifact:
+        appState: 'IsRetrievedCachedItem'
+        appName: 'retrievedcacheditem'
+        appDomain: 'retrievedcacheditem'

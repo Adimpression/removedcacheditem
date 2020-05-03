@@ -47,16 +47,21 @@
         </repository>
     </repositories>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>state</groupId>
+                <artifactId>generator</artifactId>
+                <version>2.0.146</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>specification</groupId>
             <artifactId>specification</artifactId>
             <version>1.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>state</groupId>
-            <artifactId>generator</artifactId>
-            <version>2.0.145</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -77,6 +82,22 @@
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast-client</artifactId>
             <version>3.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>1.1-groovy-2.4-rc-2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>storedcacheditem</groupId>
+            <artifactId>storedcacheditem</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>retrievedcacheditem</groupId>
+            <artifactId>retrievedcacheditem</artifactId>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 
