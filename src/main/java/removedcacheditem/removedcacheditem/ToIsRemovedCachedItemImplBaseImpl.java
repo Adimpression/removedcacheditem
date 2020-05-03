@@ -75,11 +75,15 @@ public class ToIsRemovedCachedItemImplBaseImpl extends ToIsRemovedCachedItemGrpc
 
             final ByteString previousValue;
 
-            lock.lock();
-            try {
+            if (isInput.getIsUseLockBoolean()) {
+                lock.lock();
+                try {
+                    previousValue = general.remove(isStringValue);
+                } finally {
+                    lock.unlock();
+                }
+            } else {
                 previousValue = general.remove(isStringValue);
-            } finally {
-                lock.unlock();
             }
 
             if (previousValue == null) {

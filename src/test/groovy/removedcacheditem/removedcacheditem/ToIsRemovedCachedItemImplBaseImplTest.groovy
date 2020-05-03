@@ -76,6 +76,7 @@ class ToIsRemovedCachedItemImplBaseImplTest extends Specification {
                                         .setIsStringValue(String.valueOf(System.currentTimeMillis()))
                                         .build())
                                 .build())
+                        .setIsUseLockBoolean(true)
                         .build())
                 .build()
 
@@ -110,6 +111,7 @@ class ToIsRemovedCachedItemImplBaseImplTest extends Specification {
                                         .setIsStringValue(String.valueOf(key))
                                         .build())
                                 .build())
+                        .setIsUseLockBoolean(true)
                         .build())
                 .build()
 
@@ -146,6 +148,7 @@ class ToIsRemovedCachedItemImplBaseImplTest extends Specification {
                                         .setIsStringValue(String.valueOf(key))
                                         .build())
                                 .build())
+                        .setIsUseLockBoolean(true)
                         .build())
                 .build()
 
@@ -157,6 +160,7 @@ class ToIsRemovedCachedItemImplBaseImplTest extends Specification {
                                         .setIsStringValue(String.valueOf(key))
                                         .build())
                                 .build())
+                        .setIsUseLockBoolean(true)
                         .build())
                 .build()
         when:
